@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
-export type CENNZnetNetwork = "Nikau" | "Rata";
+export type EdgeverseNetwork = "Beresheet" | "Soupcan";
 
-export interface CENNZnetToken {
+export interface EDGToken {
 	symbol: string;
 	assetId: number;
 	logo: string;
@@ -23,11 +23,10 @@ interface MetaMaskNetwork {
 }
 
 export interface MetamaskNetworks {
-	Nikau: MetaMaskNetwork;
-	Rata: MetaMaskNetwork;
+	Beresheet: MetaMaskNetwork;
 }
 
-export type Chain = "CENNZnet" | "Ethereum";
+export type Chain = "Edgeware" | "Ethereum";
 
 export interface GenericCoin {
 	decimals: number;
