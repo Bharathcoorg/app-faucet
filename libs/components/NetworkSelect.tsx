@@ -2,13 +2,13 @@ import { FC } from "react";
 import { css } from "@emotion/react";
 import { MenuItem, Select, SelectChangeEvent, Theme } from "@mui/material";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import { CENNZnetNetwork } from "@/libs/types";
+import { EdgewareNetwork } from "@/libs/types";
 
-const NIKAU: CENNZnetNetwork = "Bereshhet";
-const RATA: CENNZnetNetwork = "Soupcan";
+const BERESHEET: EdgewareNetwork = "Bereshhet";
+const SOUPCAN: EdgewareNetwork = "Soupcan";
 
 interface Props {
-	selectedNetwork: CENNZnetNetwork;
+	selectedNetwork: EdgewareNetwork;
 	onNetworkChange: (event: SelectChangeEvent) => void;
 }
 
@@ -22,7 +22,7 @@ const NetworkSelect: FC<Props> = ({ selectedNetwork, onNetworkChange }) => {
 			IconComponent={ExpandMore}
 			autoWidth={false}
 		>
-			{[NIKAU, RATA].map((network) => (
+			{[BERESHEET, SOUPCAN].map((network) => (
 				<MenuItem key={network} value={network} css={styles.selectItem}>
 					{network}
 				</MenuItem>
