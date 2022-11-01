@@ -1,6 +1,6 @@
-import { CENNZ_IPFS } from "@/libs/constants";
+import { EDG_IPFS } from "@/libs/constants";
 
-export default async function addCENNZTokenToMetamask() {
+export default async function addEDGTokenToMetaMask() {
 	await global.ethereum.request({
 		method: "wallet_watchAsset",
 		params: {
