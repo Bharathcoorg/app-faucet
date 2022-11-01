@@ -1,4 +1,4 @@
-import { isEthereumAddress, isCENNZAddress } from "@/libs/utils";
+import { isEthereumAddress, isEDGAddress } from "@/libs/utils";
 import { MutableRefObject, useEffect, useRef } from "react";
 
 interface AddressValidationHook {
@@ -17,7 +17,7 @@ export default function useAddressValidation(
 		const isValid =
 			addressType === "Ethereum"
 				? isEthereumAddress(address)
-				: isCENNZAddress(address);
+				: isEDGAddress(address);
 
 		input.setCustomValidity(
 			!isValid
