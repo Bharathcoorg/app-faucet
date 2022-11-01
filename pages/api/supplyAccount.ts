@@ -2,14 +2,14 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { Api } from "@cennznet/api";
 import { getSession } from "next-auth/react";
 import {
-	CENNZNET_NIKAU_API_URL,
-	CENNZNET_RATA_API_URL,
+	EDGEVERSE_BERESHEET_API_URL,
+	EDGEVERSE_SOUPCAN_API_URL,
 	ENDOWED_ACCOUNT_SEEDS,
 	TRANSFER_AMOUNT,
 } from "@/libs/constants";
 import { EndowedAccounts } from "@/libs/utils";
 import { fetchClaimStatus, setNewClaim } from "@/libs/utils/claimStatus";
-import { CENNZnetNetwork } from "@/libs/types";
+import { EdgeverseNetwork } from "@/libs/types";
 import { cvmToAddress } from "@cennznet/types/utils";
 
 export default async function handler(
@@ -17,7 +17,7 @@ export default async function handler(
 	res: NextApiResponse
 ) {
 	const { address, addressType, network, assetId } = JSON.parse(req.body);
-	const CENNZNetwork: CENNZnetNetwork = network;
+	const EDGNetwork: EdgeverseNetwork = network;
 
 	if (!assetId)
 		return res
@@ -42,16 +42,16 @@ export default async function handler(
 			.status(401)
 			.json({ success: false, error: "Invalid Twitter account" });
 
-	const CENNZAddress =
-		addressType === "CENNZnet" ? address : cvmToAddress(address);
-	const claimed = await fetchClaimStatus(CENNZAddress, network, assetId);
+	const EDGAddress =
+		addressType === "Edgeware" ? address : cvmToAddress(address);
+	const claimed = await fetchClaimStatus(EDGAddress, network, assetId);
 	if (claimed)
 		return res.status(400).send({ error: "Already claimed in 24h window" });
 
 	try {
 		let networkUrl: string;
-		if (CENNZNetwork === "Nikau") networkUrl = CENNZNET_NIKAU_API_URL;
-		else if (CENNZNetwork === "Rata") networkUrl = CENNZNET_RATA_API_URL;
+		if ( EDGNetwork === "Beresheet") networkUrl = EDGEVERSE_BERESHEET_API_URL;
+		else if (EDGNetwork === "Soupcan") networkUrl = EDGEVERSE_SOUPCAN_API_URL;
 		const api = await Api.create({ provider: networkUrl });
 		const endowedAccounts = new EndowedAccounts(api, ENDOWED_ACCOUNT_SEEDS);
 
@@ -59,12 +59,12 @@ export default async function handler(
 		await endowedAccounts.send(
 			endowedAccounts.api.tx.genericAsset.transfer(
 				assetId,
-				CENNZAddress,
+				EDGAddress,
 				TRANSFER_AMOUNT
 			)
 		);
 
-		await setNewClaim(CENNZAddress, network, assetId);
+		await setNewClaim(EDGAddress, network, assetId);
 		await api.disconnect();
 
 		return res.status(200).json({ success: true });
