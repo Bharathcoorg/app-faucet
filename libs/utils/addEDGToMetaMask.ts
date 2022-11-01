@@ -1,10 +1,10 @@
 import { NETWORKS } from "@/libs/constants";
 import { MetaMaskInpageProvider } from "@metamask/providers";
-import { CENNZnetNetwork } from "@/libs/types";
+import { EdgewareNetwork } from "@/libs/types";
 
-export default async function addCENNZnetToMetaMask(
+export default async function addEDGToMetaMask(
 	extension: MetaMaskInpageProvider,
-	network: CENNZnetNetwork
+	network: EdgewareNetwork
 ) {
 	try {
 		await extension.request({
@@ -22,8 +22,8 @@ export default async function addCENNZnetToMetaMask(
 					blockExplorerUrls: [NETWORKS[network].blockExplorerUrl],
 					chainName: NETWORKS[network].chainName,
 					nativeCurrency: {
-						name: "CPAY",
-						symbol: "CPAY",
+						name: "EDG",
+						symbol: "EDG",
 						decimals: 18,
 					},
 					rpcUrls: [NETWORKS[network].rpcUrl],
