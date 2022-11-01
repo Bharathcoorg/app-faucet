@@ -27,7 +27,7 @@ const MetaMaskPrompt: FC<Props> = ({ isCENNZ }) => {
 				>
 					here
 				</span>{" "}
-				to add <span css={styles.tokenSymbol}>CENNZ</span> to your wallet.
+				to add <span css={styles.tokenSymbol}>EDG</span> to your wallet.
 			</>
 		);
 
@@ -40,7 +40,7 @@ const MetaMaskPrompt: FC<Props> = ({ isCENNZ }) => {
 			>
 				here
 			</span>{" "}
-			to switch to CENNZnet {network} in MetaMask.
+			to switch to EdgewareEVM {network} in MetaMask.
 		</>
 	);
 };
