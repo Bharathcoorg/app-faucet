@@ -25,7 +25,7 @@ const FaucetAccountInput: FC = () => {
 			value={address}
 			inputRef={inputRef}
 			required
-			placeholder={"Enter a CENNZnet or Ethereum address"}
+			placeholder={"Enter a Edgeware or EVM address"}
 			onChange={(e) => setAddress(e.target.value)}
 			InputProps={{
 				startAdornment: (
