@@ -24,7 +24,7 @@ describe("EndowedAccounts", () => {
 
 	describe("send()", () => {
 		it("should be able to send funds to given account", async () => {
-			const assetId = 16001;
+			const assetId = 0;
 			const assetBalanceBobBefore = await api.query.genericAsset.freeBalance(
 				assetId,
 				bob.address
@@ -47,7 +47,7 @@ describe("EndowedAccounts", () => {
 			);
 		});
 		it("should be able to force supply account", async () => {
-			const assetId = 16001;
+			const assetId = 0;
 			const secondSupplyAccountBalanceBefore =
 				await api.query.genericAsset.freeBalance(
 					assetId,
@@ -71,7 +71,7 @@ describe("EndowedAccounts", () => {
 			).toEqual(parseInt(secondSupplyAccountBalanceAfter.toString()));
 		});
 		it("should be throw error when an account is depleted", async () => {
-			const assetId = 16001;
+			const assetId = 0;
 			try {
 				await endowedAccounts.send(
 					endowedAccounts.api.tx.genericAsset.transfer(
