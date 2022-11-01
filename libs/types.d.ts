@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export type EdgeverseNetwork = "Beresheet" | "Soupcan";
+export type EdgewareNetwork = "Beresheet" | "Soupcan";
 
 export interface EDGToken {
 	symbol: string;
