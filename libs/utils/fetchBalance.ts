@@ -1,10 +1,10 @@
 import { Balance } from "@cennznet/types";
-import { CENNZnetNetwork } from "@/libs/types";
+import { EdgewareNetwork } from "@/libs/types";
 
 export default async function fetchBalance(
 	address: string,
 	assetId: number,
-	network: CENNZnetNetwork
+	network: EdgewareNetwork
 ): Promise<Balance> {
 	return fetch(`https://${network.toLowerCase()}.centrality.me/public`, {
 		method: "POST",
