@@ -4,8 +4,8 @@ import { MenuItem, Select, SelectChangeEvent, Theme } from "@mui/material";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { CENNZnetNetwork } from "@/libs/types";
 
-const NIKAU: CENNZnetNetwork = "Nikau";
-const RATA: CENNZnetNetwork = "Rata";
+const NIKAU: CENNZnetNetwork = "Bereshhet";
+const RATA: CENNZnetNetwork = "Soupcan";
 
 interface Props {
 	selectedNetwork: CENNZnetNetwork;
