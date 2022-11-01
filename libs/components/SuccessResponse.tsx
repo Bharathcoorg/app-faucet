@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { css } from "@emotion/react";
-import { CENNZnetToken } from "@/libs/types";
+import { EDGToken } from "@/libs/types";
 import { Theme } from "@mui/material";
 import { useFaucet } from "@/libs/providers/FaucetProvider";
 import { useMetaMaskExtension } from "../providers/MetaMaskExtensionProvider";
@@ -8,7 +8,7 @@ import { MetaMaskPrompt } from "@/libs/components";
 
 interface Props {
 	balance: string;
-	token: CENNZnetToken;
+	token: EDGToken;
 }
 
 const SuccessResponse: FC<Props> = ({ balance, token }) => {
@@ -30,7 +30,7 @@ const SuccessResponse: FC<Props> = ({ balance, token }) => {
 						<div css={styles.copy}>
 							Can&apos;t see it in your MetaMask wallet?
 							<br />
-							<MetaMaskPrompt isCENNZ={token.symbol === "EDG"} />
+							<MetaMaskPrompt isEDG={token.symbol === "EDG"} />
 						</div>
 					)}
 				</>
