@@ -26,7 +26,7 @@ const AccountIdenticon: FC<Props> = ({ value, fadeOnChange, ...props }) => {
 
 	return (
 		<>
-			{addressType === "CENNZnet" && (
+			{addressType === "Edgeware" && (
 				<Identicon
 					css={styles.iconContainer(fadeOnChange, visible)}
 					value={address}
@@ -35,7 +35,7 @@ const AccountIdenticon: FC<Props> = ({ value, fadeOnChange, ...props }) => {
 					{...props}
 				/>
 			)}
-			{addressType === "Ethereum" && (
+			{addressType === "EVM" && (
 				<div css={styles.iconContainer(fadeOnChange, visible)}>
 					<Jazzicon
 						diameter={28}
