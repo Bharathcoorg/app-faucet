@@ -1,11 +1,11 @@
 import { useCallback } from "react";
 import { useFaucet } from "@/libs/providers/FaucetProvider";
 import { Balance, fetchBalance } from "@/libs/utils";
-import { CENNZnetToken } from "@/libs/types";
+import { EDGToken } from "@/libs/types";
 import { cvmToAddress } from "@cennznet/types/utils";
 
 export default function useBalance(): (
-	asset: CENNZnetToken
+	asset: EDGToken
 ) => Promise<string> {
 	const { address, addressType, network } = useFaucet();
 
@@ -14,7 +14,7 @@ export default function useBalance(): (
 			if (!address || !addressType || !network) return;
 
 			const balanceRaw = await fetchBalance(
-				addressType === "CENNZnet" ? address : cvmToAddress(address),
+				addressType === "EDG" ? address : cvmToAddress(address),
 				asset.assetId,
 				network
 			);
