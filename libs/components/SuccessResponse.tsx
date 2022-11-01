@@ -30,7 +30,7 @@ const SuccessResponse: FC<Props> = ({ balance, token }) => {
 						<div css={styles.copy}>
 							Can&apos;t see it in your MetaMask wallet?
 							<br />
-							<MetaMaskPrompt isCENNZ={token.symbol === "CENNZ"} />
+							<MetaMaskPrompt isCENNZ={token.symbol === "EDG"} />
 						</div>
 					)}
 				</>
