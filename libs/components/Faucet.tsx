@@ -2,10 +2,10 @@ import { FC, useCallback, useState } from "react";
 import { css } from "@emotion/react";
 import { useSession } from "next-auth/react";
 import { SelectChangeEvent, Theme } from "@mui/material";
-import { CENNZnetNetwork, CENNZnetToken, TxStatus } from "@/libs/types";
+import { EdgewareNetwork, EDGToken, TxStatus } from "@/libs/types";
 import { SUPPORTED_TOKENS } from "@/libs/constants";
 import {
-	addCENNZTokenToMetaMask,
+	addEDGTokenToMetaMask,
 	ensureEthereumChain,
 	supplyAccount,
 } from "@/libs/utils";
@@ -27,14 +27,14 @@ const Faucet: FC = () => {
 	const { data: session } = useSession();
 	const { address, addressType, network, setNetwork } = useFaucet();
 	const { extension } = useMetaMaskExtension();
-	const [token, setToken] = useState<CENNZnetToken>(SUPPORTED_TOKENS[0]);
+	const [token, setToken] = useState<EDGToken>(SUPPORTED_TOKENS[0]);
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const [response, setResponse] = useState<TxStatus>();
 
 	const fetchBalance = useBalance();
 
 	const onNetworkChange = (event: SelectChangeEvent) => {
-		const selectedNetwork = event.target.value as CENNZnetNetwork;
+		const selectedNetwork = event.target.value as EdgewareNetwork;
 		setNetwork(selectedNetwork);
 	};
 
@@ -93,7 +93,7 @@ const Faucet: FC = () => {
 							css={styles.toolTipTrigger}
 							onClick={() =>
 								ensureEthereumChain(extension, network).then(
-									addCENNZTokenToMetaMask
+									addEDGTokenToMetaMask
 								)
 							}
 						>
