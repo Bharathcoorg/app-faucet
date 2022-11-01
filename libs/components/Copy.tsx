@@ -12,8 +12,8 @@ const Copy: FC<Props> = ({ children }) => {
 			<img src={CENNZ_LOGO} css={styles.logoImage} alt="CENNZnet Logo" />
 			<div css={styles.description}>
 				<p>
-					Bootstrap your wallet with <strong>2000</strong> <em>CENNZ</em> and{" "}
-					<em>CPAY</em> across our testnet networks.
+					Bootstrap your wallet with <strong>1000</strong> <em>EDG</em> and{" "}
+					<em>KAB</em> across our testnet networks.
 				</p>
 				<p>
 					One claim per day per token is allowed. <br />
