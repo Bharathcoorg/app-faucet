@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 					<FaucetProvider>
 						<MetaMaskExtensionProvider>
 							<Head>
-								<title>CENNZnet App Faucet</title>
+								<title>Edgeverse Testnet Faucet</title>
 								<meta
 									name="description"
 									content="Testnet token faucet powered by CENNZnet"
