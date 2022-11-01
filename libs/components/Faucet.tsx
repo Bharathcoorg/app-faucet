@@ -99,8 +99,8 @@ const Faucet: FC = () => {
 						>
 							here
 						</span>{" "}
-						to add <em>CENNZ</em> token to MetaMask before using the faucet with
-						an Ethereum address.
+						to add <em>EDG</em> token to MetaMask before using the faucet with
+						an EVM address.
 					</p>
 				)}
 			</Copy>
