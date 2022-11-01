@@ -14,7 +14,7 @@ const FaucetAccountInput: FC = () => {
 	useEffect(() => {
 		if (!address) return setAddressType(null);
 		if (isEthereumAddress(address)) return setAddressType("Ethereum");
-		setAddressType("CENNZnet");
+		setAddressType("Edgeware");
 	}, [address, setAddressType, setAddress]);
 
 	return (
