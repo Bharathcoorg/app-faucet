@@ -1,9 +1,9 @@
-import { CENNZnetNetwork } from "@/libs/types";
+import { EdgewareNetwork } from "@/libs/types";
 
 const supplyAccount = async (
 	address: string,
 	addressType: string,
-	network: CENNZnetNetwork,
+	network: EdgewareNetwork,
 	assetId: number
 ) =>
 	await fetch(`/api/supplyAccount`, {
