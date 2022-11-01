@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 								<title>Edgeverse Testnet Faucet</title>
 								<meta
 									name="description"
-									content="Testnet token faucet powered by CENNZnet"
+									content="Testnet token faucet powered by Edgeverse"
 								/>
 								<link rel="icon" href={FAVICON} />
 							</Head>
