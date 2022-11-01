@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useFaucet } from "@/libs/providers/FaucetProvider";
 import { useMetaMaskExtension } from "@/libs/providers/MetaMaskExtensionProvider";
-import { addCENNZTokenToMetaMask, ensureEthereumChain } from "@/libs/utils";
+import { addEDGTokenToMetaMask, ensureEthereumChain } from "@/libs/utils";
 import { Theme } from "@mui/material";
 import { css } from "@emotion/react";
 
@@ -9,11 +9,11 @@ interface Props {
 	isCENNZ: boolean;
 }
 
-const MetaMaskPrompt: FC<Props> = ({ isCENNZ }) => {
+const MetaMaskPrompt: FC<Props> = ({ isEDG }) => {
 	const { network } = useFaucet();
 	const { extension } = useMetaMaskExtension();
 
-	if (isCENNZ)
+	if (isEDG)
 		return (
 			<>
 				Click{" "}
@@ -21,7 +21,7 @@ const MetaMaskPrompt: FC<Props> = ({ isCENNZ }) => {
 					css={styles.toolTipTrigger}
 					onClick={() =>
 						ensureEthereumChain(extension, network).then(
-							addCENNZTokenToMetaMask
+							addEDGTokenToMetaMask
 						)
 					}
 				>
