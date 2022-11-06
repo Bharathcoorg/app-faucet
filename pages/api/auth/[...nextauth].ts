@@ -13,6 +13,9 @@ export default NextAuth({
 			clientId: TWITTER_ID,
 			clientSecret: TWITTER_SECRET,
 			version: "2.0",
+      httpOptions: {
+        timeout: 60000,
+      },
 			userinfo: {
 				url: "https://api.twitter.com/2/users/me",
 				params: { "user.fields": ["created_at", "public_metrics"] },

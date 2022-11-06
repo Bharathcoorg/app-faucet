@@ -9,7 +9,7 @@ import {
 } from "@/libs/constants";
 import { EndowedAccounts } from "@/libs/utils";
 import { fetchClaimStatus, setNewClaim } from "@/libs/utils/claimStatus";
-import { EdgeverseNetwork } from "@/libs/types";
+import { EdgewareNetwork } from "@/libs/types";
 import { cvmToAddress } from "@cennznet/types/utils";
 
 export default async function handler(
@@ -17,7 +17,7 @@ export default async function handler(
 	res: NextApiResponse
 ) {
 	const { address, addressType, network, assetId } = JSON.parse(req.body);
-	const EDGNetwork: EdgeverseNetwork = network;
+	const EDGNetwork: EdgewareNetwork = network;
 
 	if (!assetId)
 		return res

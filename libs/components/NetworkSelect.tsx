@@ -4,7 +4,7 @@ import { MenuItem, Select, SelectChangeEvent, Theme } from "@mui/material";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { EdgewareNetwork } from "@/libs/types";
 
-const BERESHEET: EdgewareNetwork = "Bereshhet";
+const BERESHEET: EdgewareNetwork = "Beresheet";
 const SOUPCAN: EdgewareNetwork = "Soupcan";
 
 interface Props {

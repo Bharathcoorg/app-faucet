@@ -35,7 +35,7 @@ const AccountIdenticon: FC<Props> = ({ value, fadeOnChange, ...props }) => {
 					{...props}
 				/>
 			)}
-			{addressType === "EVM" && (
+			{addressType === "Ethereum" && (
 				<div css={styles.iconContainer(fadeOnChange, visible)}>
 					<Jazzicon
 						diameter={28}

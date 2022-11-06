@@ -32,8 +32,14 @@ export const TRANSFER_AMOUNT: number = Number(
 export const CENNZNET_NIKAU_API_URL: string = String(
 	process.env.NEXT_PUBLIC_EDGEVERSE_BERESHEET_API_URL
 );
+export const EDGEVERSE_BERESHEET_API_URL: string = String(
+	process.env.NEXT_PUBLIC_EDGEVERSE_BERESHEET_API_URL
+);
 
 export const CENNZNET_RATA_API_URL: string = String(
+	process.env.NEXT_PUBLIC_EDGEVERSE_SOUPCAN_API_URL
+);
+export const EDGEVERSE_SOUPCAN_API_URL: string = String(
 	process.env.NEXT_PUBLIC_EDGEVERSE_SOUPCAN_API_URL
 );
 
@@ -42,11 +48,11 @@ export const REDIS_URL: string = String(process.env.REDIS_URL);
 export const GA_ID: string = process.env.NEXT_PUBLIC_GA_ID;
 
 export const NETWORKS: MetamaskNetworks = {
-	Nikau: {
+	Beresheet: {
 		blockExplorerUrl: "https://edgscan.live",
 		chainId: "0x7e6",
 		chainName: "Edgeware EVM",
-		rpcUrl: "https://edgeware.api.onfinality.io/public",
+		rpcUrl: "https://beresheet-evm.jelliedowl.net/",
 	},
 };
 

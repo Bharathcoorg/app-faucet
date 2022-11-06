@@ -14,7 +14,7 @@ export default function useBalance(): (
 			if (!address || !addressType || !network) return;
 
 			const balanceRaw = await fetchBalance(
-				addressType === "EDG" ? address : cvmToAddress(address),
+				addressType === "Edgeware" ? address : cvmToAddress(address),
 				asset.assetId,
 				network
 			);

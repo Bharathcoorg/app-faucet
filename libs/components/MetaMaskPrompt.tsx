@@ -6,7 +6,7 @@ import { Theme } from "@mui/material";
 import { css } from "@emotion/react";
 
 interface Props {
-	isCENNZ: boolean;
+	isEDG: boolean;
 }
 
 const MetaMaskPrompt: FC<Props> = ({ isEDG }) => {
